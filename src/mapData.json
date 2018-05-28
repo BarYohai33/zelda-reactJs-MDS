@@ -1,0 +1,122 @@
+{
+    "matrixNumbers": {
+        "0": {
+            "action": "none",
+            "image": "img/grass.jpg"
+        },
+        "200": {
+            "action": "forbidden",
+            "image": "img/tree.png"
+        },
+        "100": {
+            "action": "monster",
+            "image": "img/monster.png",
+            "split": {
+                "X": "65px",
+                "Y": "-96px"
+            }
+        },
+        "101": {
+            "action": "monster",
+            "image": "img/monster.png",
+            "split": {
+                "X": "3px",
+                "Y": "-94px"
+            }
+        },
+        "102": {
+            "action": "monster",
+            "image": "img/monster.png",
+            "split": {
+                "X": "35px",
+                "Y": "-94px"
+            }
+        },
+        "110": {
+            "action": "monster",
+            "image": "img/monster.png",
+            "split": {
+                "X": "65px",
+                "Y": "1px"
+            }
+        },
+        "111": {
+            "action": "monster",
+            "image": "img/monster.png",
+            "split": {
+                "X": "2px",
+                "Y": "1px"
+            }
+        },
+        "112": {
+            "action": "monster",
+            "image": "img/monster.png",
+            "split": {
+                "X": "33px",
+                "Y": "1px"
+            }
+        },
+        "120": {
+            "action": "monster",
+            "image": "img/monster.png",
+            "split": {
+                "X": "65px",
+                "Y": "-31px"
+            }
+        },
+        "121": {
+            "action": "monster",
+            "image": "img/monster.png",
+            "split": {
+                "X": "4px",
+                "Y": "-31px"
+            }
+        },
+        "122": {
+            "action": "monster",
+            "image": "img/monster.png",
+            "split": {
+                "X": "35px",
+                "Y": "-31px"
+            }
+        },
+        "130": {
+            "action": "monster",
+            "image": "img/monster.png",
+            "split": {
+                "X": "65px",
+                "Y": "-63px"
+            }
+        },
+        "131": {
+            "action": "monster",
+            "image": "img/monster.png",
+            "split": {
+                "X": "3px",
+                "Y": "-63px"
+            }
+        },
+        "132": {
+            "action": "monster",
+            "image": "img/monster.png",
+            "split": {
+                "X": "35px",
+                "Y": "-63px"
+            }
+        }
+    },
+    "monsterNumbers": {
+        "monster": 1,
+        "direction": {
+            "up": 0,
+            "down": 1,
+            "left": 2,
+            "right": 3
+        },
+        "posture": {
+            "stay": 0,
+            "move1": 1,
+            "move2": 2
+        }
+    }
+}
