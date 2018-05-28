@@ -10,98 +10,98 @@
         },
         "100": {
             "action": "monster",
-            "image": "img/monster.png",
+            "image": "img/link.png",
             "split": {
-                "X": "65px",
-                "Y": "-96px"
+                "X": "-200px",
+                "Y": "-100px"
             }
         },
         "101": {
             "action": "monster",
-            "image": "img/monster.png",
+            "image": "img/link.png",
             "split": {
-                "X": "3px",
-                "Y": "-94px"
+                "X": "-50px",
+                "Y": "-100px"
             }
         },
         "102": {
             "action": "monster",
-            "image": "img/monster.png",
+            "image": "img/link.png",
             "split": {
-                "X": "35px",
-                "Y": "-94px"
+                "X": "-350px",
+                "Y": "-100px"
             }
         },
         "110": {
             "action": "monster",
-            "image": "img/monster.png",
+            "image": "img/link.png",
             "split": {
-                "X": "65px",
-                "Y": "1px"
+                "X": "-200px",
+                "Y": "-50px"
             }
         },
         "111": {
             "action": "monster",
-            "image": "img/monster.png",
+            "image": "img/link.png",
             "split": {
-                "X": "2px",
-                "Y": "1px"
+                "X": "-50px",
+                "Y": "-50px"
             }
         },
         "112": {
             "action": "monster",
-            "image": "img/monster.png",
+            "image": "img/link.png",
             "split": {
-                "X": "33px",
-                "Y": "1px"
+                "X": "-300px",
+                "Y": "-50px"
             }
         },
         "120": {
             "action": "monster",
-            "image": "img/monster.png",
+            "image": "img/link.png",
             "split": {
-                "X": "65px",
-                "Y": "-31px"
+                "X": "-200px",
+                "Y": "-200px"
             }
         },
         "121": {
             "action": "monster",
-            "image": "img/monster.png",
+            "image": "img/link.png",
             "split": {
-                "X": "4px",
-                "Y": "-31px"
+                "X": "-50px",
+                "Y": "-200px"
             }
         },
         "122": {
             "action": "monster",
-            "image": "img/monster.png",
+            "image": "img/link.png",
             "split": {
-                "X": "35px",
-                "Y": "-31px"
+                "X": "-300px",
+                "Y": "-200px"
             }
         },
         "130": {
             "action": "monster",
-            "image": "img/monster.png",
+            "image": "img/link.png",
             "split": {
-                "X": "65px",
-                "Y": "-63px"
+                "X": "-200px",
+                "Y": "-150px"
             }
         },
         "131": {
             "action": "monster",
-            "image": "img/monster.png",
+            "image": "img/link.png",
             "split": {
-                "X": "3px",
-                "Y": "-63px"
+                "X": "-50px",
+                "Y": "-150px"
             }
         },
         "132": {
             "action": "monster",
-            "image": "img/monster.png",
+            "image": "img/link.png",
             "split": {
-                "X": "35px",
-                "Y": "-63px"
+                "X": "-150px",
+                "Y": "-150px"
             }
         }
     },
