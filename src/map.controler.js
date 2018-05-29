@@ -1,7 +1,7 @@
 // Local
 import mapData from './mapData';
 
-const generateNewMatrix = (nbRows, nbCols, monsterPosition) => {
+const generateNewMatrix = (nbRows, nbCols, zeldaPosition) => {
     const matrix = [];
     const treeNumber = 200;
     const randY = Math.floor(Math.random() * Math.floor(nbRows-1));
@@ -14,26 +14,28 @@ const generateNewMatrix = (nbRows, nbCols, monsterPosition) => {
         matrix.push(row);
     }
     matrix[randY][randX] = treeNumber
-    return updateMonsterPosition(matrix, monsterPosition).matrix;
+    return updateZeldaPosition(matrix, zeldaPosition).matrix;
 };
 
-const updateMonsterPosition = (matrix, monsterPosition, prevMonsterPosition) => {
-    let { X, Y, direction, posture } = monsterPosition;
-    const monsterNumber1 = mapData.monsterNumbers.monster;
-    const monsterNumber2 = mapData.monsterNumbers.direction[direction];
-    const monsterNumber3 = mapData.monsterNumbers.posture[posture];
-    const monsterNumber = `${monsterNumber1}${monsterNumber2}${monsterNumber3}`;
+const updateZeldaPosition = (matrix, zeldaPosition, prevZeldaPosition) => {
+    let { X, Y, direction, posture } = zeldaPosition;
+    const zeldaNumber1 = mapData.zeldaNumbers.zelda;
+    const zeldaNumber2 = mapData.zeldaNumbers.direction[direction];
+    const zeldaNumber3 = mapData.zeldaNumbers.posture[posture];
+    const zeldaNumber = `${zeldaNumber1}${zeldaNumber2}${zeldaNumber3}`;
+    console.log(zeldaNumber);
     if (mapData.matrixNumbers[matrix[Y][X]].action !== "forbidden") {
-        if (prevMonsterPosition) matrix[prevMonsterPosition.Y][prevMonsterPosition.X] = 0;
+        if (prevZeldaPosition) matrix[prevZeldaPosition.Y][prevZeldaPosition.X] = 0;
     } else {
-        X = prevMonsterPosition.X;
-        Y = prevMonsterPosition.Y;
+        X = prevZeldaPosition.X;
+        Y = prevZeldaPosition.Y;
     }
-    matrix[Y][X] = parseInt(monsterNumber, 10);
+    matrix[Y][X] = parseInt(zeldaNumber, 10);
+    console.log(matrix[Y][X]);
     return {
         matrix,
-        monsterPosition: { direction, posture, X, Y },
+        zeldaPosition: { direction, posture, X, Y },
     };
 };
 
-export default { generateNewMatrix, updateMonsterPosition };
+export default { generateNewMatrix, updateZeldaPosition };

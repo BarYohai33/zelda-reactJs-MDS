@@ -15,7 +15,7 @@ class Map extends Component {
             nbRows: 20,
             nbCols: 30,
             matrix: [],
-            monsterPosition: {
+            zeldaPosition: {
                 X: 0,
                 Y: 0,
                 direction: 'down',
@@ -27,7 +27,7 @@ class Map extends Component {
     }
 
     UNSAFE_componentWillMount() {
-        const matrix = MapControler.generateNewMatrix(this.state.nbRows, this.state.nbCols, this.state.monsterPosition);
+        const matrix = MapControler.generateNewMatrix(this.state.nbRows, this.state.nbCols, this.state.zeldaPosition);
         this.setState({ matrix });
     }
     
@@ -39,48 +39,58 @@ class Map extends Component {
         // Variables
         let direction = '';
         let posture = '';
-        let X = this.state.monsterPosition.X;
-        let Y = this.state.monsterPosition.Y;
+        let X = this.state.zeldaPosition.X;
+        let Y = this.state.zeldaPosition.Y;
 
         // Direction
         if (key === "ArrowUp") {
             direction = 'up';
-            if (this.state.monsterPosition.Y !== 0) Y -= 1;
+            if (this.state.zeldaPosition.Y !== 0) Y -= 1;
         } else if (key === "ArrowDown") {
             direction = 'down';
-            if (this.state.monsterPosition.Y !== this.state.nbRows-1) Y += 1;
+            if (this.state.zeldaPosition.Y !== this.state.nbRows-1) Y += 1;
         } else if (key === "ArrowLeft") {
             direction = 'left';
-            if (this.state.monsterPosition.X !== 0) X -= 1;
+            if (this.state.zeldaPosition.X !== 0) X -= 1;
         } else if (key === "ArrowRight") {
             direction = 'right';
-            if (this.state.monsterPosition.X !== this.state.nbCols-1) X += 1;
+            if (this.state.zeldaPosition.X !== this.state.nbCols-1) X += 1;
         } else {
-            direction = this.state.monsterPosition.direction;
+            direction = this.state.zeldaPosition.direction;
         }
-
+        if (key === " " && direction === 'up') {
+            this.state.zeldaPosition.posture = 'attack';
+        }
+        if (key === " " && direction === 'down') {
+            this.state.zeldaPosition.posture = 'attack';
+        }
+        if (key === " " && direction === 'left') {
+            this.state.zeldaPosition.posture = 'attack';
+        }
+        if (key === " " && direction === 'right') {
+            this.state.zeldaPosition.posture = 'attack';
+        }   
         // Posture
-        if (this.state.monsterPosition.direction === direction) {
-            if (this.state.monsterPosition.posture === 'stay') posture = 'move1';
-            if (this.state.monsterPosition.posture === 'move1') posture = 'move2';
-            if (this.state.monsterPosition.posture === 'move2') posture = 'move1';
+        if (this.state.zeldaPosition.direction === direction) {
+            if (this.state.zeldaPosition.posture === 'stay') posture = 'move1';
+            if (this.state.zeldaPosition.posture === 'move1') posture = 'move2';
+            if (this.state.zeldaPosition.posture === 'move2') posture = 'move1';
         } else {
             posture = 'stay';
         }
 
-        // Monster position
-        const monsterPosition = { X, Y, direction, posture };
+        // zelda position
+        const zeldaPosition = { X, Y, direction, posture };
 
         // Matrix
-        const data = MapControler.updateMonsterPosition(this.state.matrix, monsterPosition, this.state.monsterPosition);
+        const data = MapControler.updateZeldaPosition(this.state.matrix, zeldaPosition, this.state.zeldaPosition);
 
         // Set State
         this.setState({
             matrix: data.matrix,
-            monsterPosition: data.monsterPosition,
+            zeldaPosition: data.zeldaPosition,
         });
     }
-
     render() {
         return (
             <div tabIndex="0" id="map" onKeyDown={this.handleKeyDown} style={Style.container(this.state.nbRows, this.state.nbCols)}>
