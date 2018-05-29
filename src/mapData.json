@@ -124,7 +124,7 @@
             "action": "zelda",
             "image": "img/link.png",
             "split": {
-                "X": "-150px",
+                "X": "-180px",
                 "Y": "-450px"
             }
         },
