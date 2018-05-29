@@ -85,6 +85,12 @@ class Map extends Component {
         // Matrix
         const data = MapControler.updateZeldaPosition(this.state.matrix, zeldaPosition, this.state.zeldaPosition);
 
+        document.body.onkeyup = (e) => {
+            if(e.keyCode === 32){
+               this.state.zeldaPosition.posture = 'stay'
+            }
+        }
+
         // Set State
         this.setState({
             matrix: data.matrix,

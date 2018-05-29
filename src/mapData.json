@@ -148,8 +148,7 @@
         "posture": {
             "stay": 0,
             "move1": 1,
-            "move2": 2,
-            "attack" : 4
+            "move2": 2
         }
     }
 }
