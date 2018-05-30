@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Map from './map.view';
 import logo from './Zelda_Logo.png'
-
+import Sound from 'react-sound';
 
 /**
  * Class Intro
@@ -28,6 +28,14 @@ class Intro extends React.Component {
         <div>
           <p style={header} onClick={(e) => {this.clicked("");} }>P R E S S  &nbsp; S T A R T</p>
         </div>
+        <Sound
+          url="http://tegos.kz/new/mp3_full/Luis_Fonsi_feat._Daddy_Yankee_-_Despacito.mp3"
+          playStatus={Sound.status.PLAYING}
+          playFromPosition={300 /* in milliseconds */}
+          onLoading={this.handleSongLoading}
+          onPlaying={this.handleSongPlaying}
+          onFinishedPlaying={this.handleSongFinishedPlaying}
+        />
     </div>
     )
   }
