@@ -7,7 +7,15 @@ import MapControler from './map.controler';
 // Styles
 import Style from './map.style';
 
+/**
+ * Class Map
+ */
 class Map extends Component {
+  
+  /**
+   * @constructor
+   * @param {Object} props
+   */
     constructor(props) {
         super(props);
 
@@ -25,16 +33,29 @@ class Map extends Component {
 
         this.handleKeyDown = this.handleKeyDown.bind(this);
     }
-
+  
+  /**
+   * UNSAFE_componentWillMount
+   * @return {Map}
+   */
     UNSAFE_componentWillMount() {
         const matrix = MapControler.generateNewMatrix(this.state.nbRows, this.state.nbCols, this.state.zeldaPosition);
         this.setState({ matrix });
     }
     
+   /**
+   * componentDidMount
+   * @return {Map}
+   */
     componentDidMount() {
         document.getElementById("map").focus();
     }
 
+  /**
+   * handleKeyDown
+   * @param {String} key
+   * @return {Map}
+   */
     handleKeyDown({ key }) {
         // Variables
         let direction = '';
@@ -115,6 +136,11 @@ class Map extends Component {
             zeldaPosition: data.zeldaPosition,
         });
     }
+  
+  /**
+   * render
+   * @return {DOM}
+   */
     render() {
         return (
             <div tabIndex="0" id="map" onKeyDown={this.handleKeyDown} style={Style.container(this.state.nbRows, this.state.nbCols)}>

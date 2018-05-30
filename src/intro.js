@@ -4,12 +4,23 @@ import Map from './map.view';
 import logo from './Zelda_Logo.png'
 
 
+/**
+ * Class Intro
+ */
 class Intro extends React.Component {
   
+  /**
+   * clicked
+   * @return {DOM}
+   */
   clicked() {
     ReactDOM.render(<Map />, document.getElementById('root'));
   }
   
+  /**
+   * render
+   * @return {DOM}
+   */
   render() {
     return(
       <div>
@@ -42,4 +53,3 @@ const header = {
 }
 
 export default Intro
-

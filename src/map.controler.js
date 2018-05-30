@@ -18,6 +18,14 @@ const generateNewMatrix = (nbRows, nbCols, zeldaPosition) => {
     return updateZeldaPosition(matrix, zeldaPosition).matrix;
 };
 
+
+/**
+   * updateZeldaPosition
+   * @param {Object} matrix
+   * @param {Object} zeldaPosition
+   * @param {Object} prevZeldaPosition
+   * @return {Object} matrix,zeldaPosition
+ */
 const updateZeldaPosition = (matrix, zeldaPosition, prevZeldaPosition) => {
     let { X, Y, direction, posture } = zeldaPosition;
     const zeldaNumber1 = mapData.zeldaNumbers.zelda;

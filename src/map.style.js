@@ -29,7 +29,11 @@ const col = {
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
 }
-
+/**
+   * updateZeldaPosition
+   * @param {INT} colNumber
+   * @return {object} datawidth,height,backgroundImage,backgroundPosition,backgroundSizematrix
+ */
 const img = colNumber => {
     const imageData = mapData.matrixNumbers[colNumber];
     return ({
