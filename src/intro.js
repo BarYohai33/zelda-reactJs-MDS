@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import Map from './map.view';
 import logo from './Zelda_Logo.png'
@@ -13,7 +13,7 @@ class Intro extends React.Component {
   render() {
     return(
       <div>
-        <div><img src={logo} style={styles} /></div>
+        <div><img alt='' src={logo} style={styles} /></div>
         <div>
           <p style={header} onClick={(e) => {this.clicked("");} }>P R E S S  &nbsp; S T A R T</p>
         </div>
@@ -25,11 +25,6 @@ class Intro extends React.Component {
 const styles = {
   height: "250px",
   width: "500px",
-  alignItems: 'center',
-}
-
-const btnStyles = {
-  width: '100%',
   alignItems: 'center',
 }
 

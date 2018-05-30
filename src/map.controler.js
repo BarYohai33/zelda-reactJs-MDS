@@ -14,6 +14,7 @@ const generateNewMatrix = (nbRows, nbCols, zeldaPosition) => {
         matrix.push(row);
     }
     matrix[randY][randX] = treeNumber
+    
     return updateZeldaPosition(matrix, zeldaPosition).matrix;
 };
 
