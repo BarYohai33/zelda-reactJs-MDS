@@ -58,20 +58,34 @@ class Map extends Component {
         } else {
             direction = this.state.zeldaPosition.direction;
         }
+
         if (key === " " && direction === 'up') {
-            this.state.zeldaPosition.posture = 'attack';
-        }
-        if (key === " " && direction === 'down') {
-            this.state.zeldaPosition.posture = 'attack';
-        }
-        if (key === " " && direction === 'left') {
-            this.state.zeldaPosition.posture = 'attack';
-        }
-        if (key === " " && direction === 'right') {
-            this.state.zeldaPosition.posture = 'attack';
+            this.setState({
+                zeldaPosition: Object.assign({}, this.state.zeldaPosition, {
+                    posture: 'attack',
+                }),
+            });
+        }else if (key === " " && direction === 'down') {
+            this.setState({
+                zeldaPosition: Object.assign({}, this.state.zeldaPosition, {
+                    posture: 'attack',
+                }),
+            });
+        } else if (key === " " && direction === 'left') {
+            this.setState({
+                zeldaPosition: Object.assign({}, this.state.zeldaPosition, {
+                    posture: 'attack',
+                }),
+            });
+        }else if (key === " " && direction === 'right') {
+            this.setState({
+                zeldaPosition: Object.assign({}, this.state.zeldaPosition, {
+                    posture: 'attack',
+                }),
+            });
         }   
         // Posture
-        if (this.state.zeldaPosition.direction === direction) {
+        else if (this.state.zeldaPosition.direction === direction) {
             if (this.state.zeldaPosition.posture === 'stay') posture = 'move1';
             if (this.state.zeldaPosition.posture === 'move1') posture = 'move2';
             if (this.state.zeldaPosition.posture === 'move2') posture = 'move1';
@@ -87,9 +101,13 @@ class Map extends Component {
 
         document.body.onkeyup = (e) => {
             if(e.keyCode === 32){
-               this.state.zeldaPosition.posture = 'stay'
-            }
-        }
+                this.setState({
+                zeldaPosition: Object.assign({}, this.state.zeldaPosition, {
+                    posture: 'stay',
+                }),
+            });
+           }
+       }
 
         // Set State
         this.setState({
@@ -106,22 +124,22 @@ class Map extends Component {
                     {
                         row.map((colNumber, key) => (
                             <div
-                                key={key}
-                                style={Style.col}
+                            key={key}
+                            style={Style.col}
                             >
                             {
                                 colNumber !== 0 &&
                                 <div style={Style.img(colNumber)} />
                             }
                             </div>
+                            ))
+                        }
+                        </div>
                         ))
                     }
                     </div>
-                ))
+                    );
             }
-            </div>
-        );
-    }
-}
+        }
 
-export default Map;
+        export default Map;
