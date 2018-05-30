@@ -31,11 +31,11 @@ class Intro extends React.Component {
         <Sound
           url="http://tegos.kz/new/mp3_full/Luis_Fonsi_feat._Daddy_Yankee_-_Despacito.mp3"
           playStatus={Sound.status.PLAYING}
-          playFromPosition={300 /* in milliseconds */}
+          playFromPosition={1 /* in milliseconds */}
           onLoading={this.handleSongLoading}
           onPlaying={this.handleSongPlaying}
           onFinishedPlaying={this.handleSongFinishedPlaying}
-        />
+      />
     </div>
     )
   }
